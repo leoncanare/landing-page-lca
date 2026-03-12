@@ -190,7 +190,7 @@ img {
   .container {
     width: var(--container-width-md);
   }
-  
+
   section {
     margin-top: 5rem;
     padding-top: 1.5rem;
@@ -216,7 +216,7 @@ img {
   .container {
     width: var(--container-width-sm);
   }
-  
+
   section {
     margin-top: 4rem;
     margin-bottom: 2rem;

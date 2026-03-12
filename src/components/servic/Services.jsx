@@ -8,7 +8,6 @@ import {
   SiAngular,
   SiTypescript,
   SiSass,
-  SiCss3,
   SiStorybook,
   SiMicrosoftazure,
   SiNx,
