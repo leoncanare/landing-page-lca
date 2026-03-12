@@ -1,10 +1,10 @@
 import React from "react";
 import "./portfolio.css";
-import IMG from "../../assets/dotsGif.gif";
-import IMG1 from "../../assets/angularBases.png";
-import IMG2 from "../../assets/counter.png";
-import IMG3 from "../../assets/digidex.png";
-import IMG4 from "../../assets/personalized-components-library.PNG";
+import IMG from "../../assets/images/portfolio/dotsGif.gif";
+import IMG1 from "../../assets/images/portfolio/angularBases.png";
+import IMG2 from "../../assets/images/portfolio/counter.png";
+import IMG3 from "../../assets/images/portfolio/digidex.png";
+import IMG4 from "../../assets/images/portfolio/personalized-components-library.PNG";
 
 import { FaEye } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";

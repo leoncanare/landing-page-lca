@@ -2,7 +2,7 @@ import React from 'react'
 import './header.css'
 import HB from './HeadBtns'
 import HS from './HeadSocials'
-import ME from '../../assets/me.png'
+import ME from '../../assets/images/profile/me.png'
 import {BsFileArrowDownFill} from 'react-icons/bs'
 
 const Header = () => {

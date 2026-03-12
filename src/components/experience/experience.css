@@ -41,30 +41,59 @@
 
 /* ===== MEDIA QUERIES -> Medium Devices ===== */
 @media screen and (max-width: 1024px) {
-    .experience__container {
-        grid-template-columns: 1fr;
-    }
-    .experience__container > div {
-        width: 60%;
-        padding: 2rem;
-        margin: auto;
-    }
-    .experience__content {
-        padding: 1rem;
-    }
+  .experience__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .experience__container > div {
+    width: 80%;
+    padding: 2rem;
+    margin: auto;
+  }
+  
+  .experience__content {
+    padding: 1rem;
+    gap: 2rem;
+  }
 }
 
 /* ===== MEDIA QUERIES -> Small Devices ===== */
 @media screen and (max-width: 700px) {
-    .experience__container {
-        gap: 1rem;
-    }
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
-    .experience__content {
-        padding: 1rem;
-    }
+  .experience__container {
+    gap: 1.5rem;
+  }
+  
+  .experience__container > div {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .experience__container > div h3 {
+    font-size: 1.2rem;
+  }
+  
+  .experience__content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .experience__details {
+    gap: 0.8rem;
+  }
+
+  .experience__details h4 {
+    font-size: 1rem;
+  }
+
+  .experience__details small {
+    font-size: 0.85rem;
+  }
+
+  .experience__details-icon {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
 }
 

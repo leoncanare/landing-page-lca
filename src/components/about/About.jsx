@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import ME from "../../assets/me-about.png";
+import ME from "../../assets/images/profile/me-about.png";
 import { FaUserGraduate, FaUniversity } from "react-icons/fa";
 // import { MdGrade } from "react-icons/md";
 
@@ -25,7 +25,7 @@ const About = () => {
             <article className="about__card">
               <FaUniversity className="about__icon" />
               <h5>University</h5>
-              <small>Universitat Oberta de Cataluña </small>
+              <small>Universitat Oberta de Catalunya</small>
             </article>
             {/* <article className="about__card">
               <MdGrade className="about__icon" />
@@ -35,15 +35,15 @@ const About = () => {
           </div>
           <div className="text">
             <p>
-            Hello, my name is León, I am a Frontend developer specialized in the Angular framework, 
-            I am fascinated by creating efficient and attractive user interfaces, 
+            Hello, my name is León, I am a Frontend developer specialized in Angular, 
+            I am passionate about creating efficient and attractive user interfaces, 
             focusing on performance optimization and providing an intuitive, 
-            functional and agile user experience.  
+            functional and agile user experience.
             <br/><br/>
             I consider myself a creative and proactive person, 
-            always with a constant focus on expanding and updating my skills as a developer.
-            and updating my skills as a developer, committed to a job well done. 
-            I enjoy working in a team and facing new challenges that allow me to grow professionally. 
+            always with a constant focus on expanding and updating my skills as a developer 
+            and committed to a job well done. 
+            I enjoy working in a team and facing new challenges that allow me to grow professionally.
             <br/><br/>
             I am eager to contribute my experience, learn with my colleagues and be able to apply my 
             creativity to the projects that come my way.

@@ -1,5 +1,5 @@
 import React from "react";
-// import CV from "../../assets/cv.pdf";
+// import CV from "../../assets/docs/cv-leon_cantalapiedra_arellano-2024-es.pdf";
 import "./headerbtns.css";
 
 import { GiTalk } from "react-icons/gi";
