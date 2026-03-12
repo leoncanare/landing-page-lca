@@ -131,11 +131,11 @@ a:hover {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+  background: var(--color-primary-variant);
   color: var(--color-white);
   border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 5px 20px rgba(174, 3, 33, 0.5);
 }
 
 .btn1 {
