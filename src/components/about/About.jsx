@@ -1,58 +1,98 @@
 import React from "react";
-import "./about.css";
+import { useTranslation } from "react-i18next";
+import useReveal from "../../hooks/useReveal";
+import FocusBanner from "./FocusBanner";
 import ME from "../../assets/images/profile/me-about.png";
-import { FaUserGraduate, FaUniversity } from "react-icons/fa";
-// import { MdGrade } from "react-icons/md";
+import "./about.css";
+
+const GradCap = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+  </svg>
+);
+const Building = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2" />
+    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+    <line x1="12" y1="12" x2="12" y2="16" />
+    <line x1="10" y1="14" x2="14" y2="14" />
+  </svg>
+);
 
 const About = () => {
+  const { t } = useTranslation();
+  const [leftRef, leftShown] = useReveal();
+  const [rightRef, rightShown] = useReveal();
+  const [headRef, headShown] = useReveal();
+
   return (
-    <section id="about">
-      <h5>Get to know</h5>
-      <h2>About Me</h2>
-      <div className="container about__container">
-        <div className="about__me">
-          <div className="about__me-image">
-            <img src={ME} alt="me-about" />
-          </div>
+    <section id="about" className="section-pad">
+      <div className="container">
+        <div
+          ref={headRef}
+          className={`section-head reveal ${headShown ? "is-visible" : ""}`}
+        >
+          <p className="eyebrow">{t("about_ey")}</p>
+          <h2 className="section-h2">{t("about_h")}</h2>
         </div>
-        <div className="about__content">
-          <div className="about__cards">
-            <article className="about__card">
-              <FaUserGraduate className="about__icon" />
-              <h5>Studies</h5>
-              <small>Cross-platform application development</small>
-            </article>
-            <article className="about__card">
-              <FaUniversity className="about__icon" />
-              <h5>University</h5>
-              <small>Universitat Oberta de Catalunya</small>
-            </article>
-            {/* <article className="about__card">
-              <MdGrade className="about__icon" />
-              <h5>Nivel</h5>
-              <small>Junior</small>
-            </article> */}
+
+        <div className="about__grid">
+          <div
+            ref={leftRef}
+            className={`about__left reveal ${leftShown ? "is-visible" : ""}`}
+          >
+            <div className="about__photo-wrap">
+              <div className="about__photo-halo" />
+              <div className="about__photo">
+                <img src={ME} alt="León Arellano" />
+              </div>
+            </div>
+            <div className="about__cards">
+              <div className="about__card">
+                <span className="about__card-icon">
+                  <GradCap />
+                </span>
+                <div>
+                  <div className="about__card-title">{t("about_c1t")}</div>
+                  <div className="about__card-sub">{t("about_c1s")}</div>
+                </div>
+              </div>
+              <div className="about__card">
+                <span className="about__card-icon">
+                  <Building />
+                </span>
+                <div>
+                  <div className="about__card-title">{t("about_c2t")}</div>
+                  <div className="about__card-sub">{t("about_c2s")}</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text">
-            <p>
-            Hello, my name is León, I am a Frontend developer specialized in Angular, 
-            I am passionate about creating efficient and attractive user interfaces, 
-            focusing on performance optimization and providing an intuitive, 
-            functional and agile user experience.
-            <br/><br/>
-            I consider myself a creative and proactive person, 
-            always with a constant focus on expanding and updating my skills as a developer 
-            and committed to a job well done. 
-            I enjoy working in a team and facing new challenges that allow me to grow professionally.
-            <br/><br/>
-            I am eager to contribute my experience, learn with my colleagues and be able to apply my 
-            creativity to the projects that come my way.
-          </p>
+
+          <div
+            ref={rightRef}
+            className={`about__right reveal ${rightShown ? "is-visible" : ""}`}
+            style={{ transitionDelay: "120ms" }}
+          >
+            <p className="about__lead">
+              {t("about_lead_a")}
+              <span className="grad-text">{t("about_lead_b")}</span>.
+            </p>
+            <p
+              className="about__p"
+              dangerouslySetInnerHTML={{ __html: t("about_p1") }}
+            />
+            <p
+              className="about__p"
+              dangerouslySetInnerHTML={{ __html: t("about_p2") }}
+            />
+            <p
+              className="about__p about__p--last"
+              dangerouslySetInnerHTML={{ __html: t("about_p3") }}
+            />
+            <FocusBanner />
           </div>
-          
-          {/* <a href="#contact" className="btn btn-primary">
-            ¡Hablemos!
-          </a> */}
         </div>
       </div>
     </section>

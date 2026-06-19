@@ -1,0 +1,37 @@
+.backtop {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 54;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  animation: topGlow 2.6s ease-in-out infinite;
+  opacity: 0;
+  transform: translateY(20px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.backtop.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.backtop:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+.backtop__arrow {
+  animation: topArrow 1.8s ease-in-out infinite;
+}
+
+/* Desktop only — the mobile dock replaces it */
+@media screen and (max-width: 860px) {
+  .backtop {
+    display: none;
+  }
+}

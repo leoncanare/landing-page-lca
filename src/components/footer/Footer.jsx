@@ -1,29 +1,22 @@
-import React from 'react'
-import './footer.css'
-import {AiFillFacebook, AiFillInstagram} from 'react-icons/ai'
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./footer.css";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
-    <footer>
-      <a href="#home" className='footer__logo'>lcanare</a>
-      {/* <ul className="permalinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonial">Testimonios</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul> */}
-      <div className="footer__socials">
-        <a href="https://www.facebook.com/leon.cantalapiedraarellano"><AiFillFacebook/></a>
-        <a href="https://www.instagram.com/leoncantallano/"><AiFillInstagram/></a>
-      </div>
-      <div className="footer__copyright">
-        <small>&copy; lcanare. All rights reserved.</small>
+    <footer className="footer">
+      <div className="footer__inner">
+        <a href="#home" className="wordmark footer__logo">
+          lcanare
+        </a>
+        <span className="footer__rights">{t("ft_rights")}</span>
+        <a href="#home" className="footer__top">
+          {t("ft_top")}
+        </a>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
