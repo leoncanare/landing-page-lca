@@ -1,122 +1,85 @@
-.portfolio__container {
+.pf__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 22px;
 }
-
-.portfolio__item {
-  background: var(--color-br-variant-obj);
-  padding: 1.3rem;
-  border-radius: 2rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
-}
-
-.portfolio__item:hover {
-  background: var(--color-br-variant);
-  border-color: var(--color-br-variant);
-}
-
-.portfolio__item-image {
-  border-radius: 1.5rem;
+.pf__card {
+  border-radius: 6px;
   overflow: hidden;
-}
-
-.portfolio__item h3 {
-  text-align: center;
-  margin: 1.2rem 0 2rem;
-}
-
-.portfolio__lenguages{
+  background: var(--surface);
+  border: 1px solid var(--line);
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.pf__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface2);
+}
+.pf__img {
   width: 100%;
-  gap: 1.5rem;
-  font-size: 1.5rem;
-  padding-top: 1rem;
-  padding-left: 2rem;
-  color: var(--color-primary-variant);
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-
-.portfolio__item-btns {
+img.pf__img {
+  object-fit: contain;
+  background: var(--surface2);
+}
+.pf__body {
+  padding: 20px;
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  flex: 1;
 }
-
-.portfolio__item-btns a {
-  font-size: 1.5rem;
+.pf__title {
+  margin: 0 0 8px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+.pf__desc {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.pf__row {
+  display: flex;
   align-items: center;
-  background: var(--color-primary);
-  box-shadow: var(--color-shadow) 0px 0px 5px 2px;
-  color: var(--color-white);
-  margin-right: 1rem;
-  padding: 0.8rem;
-  border-radius: 0.7rem;
+  justify-content: space-between;
+}
+.pf__icons {
   display: flex;
-  border: 1px solid transparent;
+  gap: 9px;
+  align-items: center;
+}
+.pf__demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 14px -4px color-mix(in srgb, var(--accent) 60%, transparent);
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.pf__demo:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
-.portfolio__item-btns a:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
-}
-
-@media screen and (max-width: 1000px) {
-  .portfolio__container {
+@media screen and (max-width: 720px) {
+  .pf__grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-/* ===== MEDIA QUERIES -> Medium Devices ===== */
-@media screen and (max-width: 1024px) {
-  .portfolio__item {
-    padding: 1.2rem;
-  }
-
-  .portfolio__lenguages {
-    gap: 1.2rem;
-    font-size: 1.3rem;
-    padding-left: 1.5rem;
-  }
-
-  .portfolio__item-btns a {
-    font-size: 1.3rem;
-    padding: 0.7rem;
-  }
-}
-
-/* ===== MEDIA QUERIES -> Small Devices ===== */
-@media screen and (max-width: 600px) {
-  .portfolio__container {
-    gap: 1.5rem;
-  }
-
-  .portfolio__item {
-    padding: 1rem;
-    border-radius: 1.5rem;
-  }
-
-  .portfolio__item h3 {
-    font-size: 1.1rem;
-    margin: 1rem 0 1.5rem;
-  }
-
-  .portfolio__lenguages {
-    gap: 1rem;
-    font-size: 1.2rem;
-    padding-left: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .portfolio__item-btns {
-    margin-bottom: 0.5rem;
-  }
-
-  .portfolio__item-btns a {
-    font-size: 1.2rem;
-    padding: 0.6rem;
-    margin-right: 0.5rem;
   }
 }

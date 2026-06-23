@@ -1,87 +1,135 @@
-import React, { useRef, useState  } from "react";
-import emailjs from "emailjs-com";
-
+import React, { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import useReveal from "../../hooks/useReveal";
 import "./contact.css";
 
-import { MdEmail } from "react-icons/md";
-import { FaTelegram } from "react-icons/fa";
-import {BsFileArrowUpFill} from 'react-icons/bs'
-import {RiMailSendLine, RiCheckLine} from 'react-icons/ri'
+const MailIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="5" width="20" height="14" rx="2" />
+    <path d="M22 7l-10 6L2 7" />
+  </svg>
+);
+const PhoneIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+  </svg>
+);
+const SendIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="22" y1="2" x2="11" y2="13" />
+    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+  </svg>
+);
+const CheckIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
 
 const Contact = () => {
+  const { t } = useTranslation();
   const form = useRef();
+  const [sent, setSent] = useState(false);
+  const [headRef, headShown] = useReveal();
+  const [leftRef, leftShown] = useReveal();
+  const [formRef, formShown] = useReveal();
 
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const sendEmail = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 2000);
-    emailjs
-      .sendForm(
-        "service_d4i4jvy",
-        "template_hrqhx1s",
-        form.current,
-        "bf6j6vcYuwJArDyzz"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    const name = form.current.name.value;
+    const email = form.current.email.value;
+    const message = form.current.message.value;
+
+    try {
+      await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+    } catch (err) {
+      console.error("Send error:", err);
+    }
+
+    setSent(true);
     form.current.reset();
+    setTimeout(() => setSent(false), 2200);
   };
 
   return (
-    <section id="contact">
-      <h5> Get in touch  </h5>
-      <h2> With Me </h2>
-      <div className="container contact__container">
-        <div className="contact__opotions">
-          <article className="contact__option">
-            <MdEmail className="contact__option-icon" />
-            <h4>Email</h4>
-            <h5>leoncanare@gmail.com</h5>
-            <a href="mailto:leoncanare@gmail.com">Send a message</a>
-          </article>
-          <article className="contact__option">
-            <FaTelegram className="contact__option-icon" />
-            <h4>Telegram</h4>
-            <h5>@leoncanare</h5>
-            <a href="mailto:leoncanare@gmail.com">Send a message</a>
-          </article>
-          {/* <article className='contact__option'>
-          <SiLinkedin/>
-          <h4>Linkedin</h4>
-          <h5>leoncanare</h5>
-          <a href="mailto:leoncanare@gmail.com">Enviar un mensaje</a>
-        </article> */}
+    <section id="contact" className="section-pad">
+      <div className="contact__container">
+        <div
+          ref={headRef}
+          className={`section-head reveal ${headShown ? "is-visible" : ""}`}
+        >
+          <p className="eyebrow">{t("ct_ey")}</p>
+          <h2 className="section-h2">{t("ct_h")}</h2>
+          <p className="contact__sub">{t("ct_sub")}</p>
         </div>
-        <form ref={form} onSubmit={sendEmail}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name or company name"
-            required
-          />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea name="message" rows="10" placeholder="Message..."></textarea>
 
-          <button type="submit" className={`btn ${isAnimating ? 'animating' : ''}`}>
-            { isAnimating 
-              ? <span>SENDED<RiCheckLine className="icon-btn ico check"/></span>
-              : <span>SEND<RiMailSendLine className="icon-btn ico msg"/></span>
-            }
-            {/* {isAnimating ? <span>✔️</span> : <span>➡️</span>} */}
-            {/* <RiCheckLine className="icon-btn ico check"/> */}
-          </button>
+        <div className="contact__grid">
+          <div
+            ref={leftRef}
+            className={`contact__cards reveal ${leftShown ? "is-visible" : ""}`}
+          >
+            <a href="mailto:leoncanare@gmail.com" className="contact__card">
+              <span className="contact__icon">
+                <MailIcon />
+              </span>
+              <div>
+                <div className="contact__card-label">Email</div>
+                <div className="contact__card-value">leoncanare@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+34679530541" className="contact__card">
+              <span className="contact__icon">
+                <PhoneIcon />
+              </span>
+              <div>
+                <div className="contact__card-label">{t("ct_phone")}</div>
+                <div className="contact__card-value">+34 679 530 541</div>
+              </div>
+            </a>
+          </div>
 
-        </form>
+          <form
+            ref={(el) => {
+              form.current = el;
+              formRef.current = el;
+            }}
+            onSubmit={onSubmit}
+            className={`contact__form reveal ${formShown ? "is-visible" : ""}`}
+            style={{ transitionDelay: "120ms" }}
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder={t("ph_name")}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder={t("ph_email")}
+              required
+            />
+            <textarea
+              name="message"
+              rows="6"
+              placeholder={t("ph_msg")}
+            ></textarea>
+            <button
+              type="submit"
+              className={`contact__btn ${sent ? "is-sent" : ""}`}
+            >
+              <span>{sent ? t("ct_sent") : t("ct_send")}</span>
+              <span className="contact__btn-icon">
+                {sent ? <CheckIcon /> : <SendIcon />}
+              </span>
+            </button>
+          </form>
+        </div>
       </div>
-      <a href="#home" className='scroll__up'><BsFileArrowUpFill/></a>
     </section>
   );
 };

@@ -1,65 +1,52 @@
-footer {
-  background: var(--color-bg);
-  padding: 3rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 7rem;
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg2);
 }
-
-footer a {
-  color: var(--color-primary);
-}
-
-.footer__logo {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  display: inline-block;
-}
-
-.permalinks {
-  font-weight: 600;
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 34px 32px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0 auto 3rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
 }
-
+.footer__logo {
+  font-size: 22px;
+}
+.footer__rights {
+  font-size: 13px;
+  color: var(--muted);
+}
 .footer__socials {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 10px;
 }
-
-.footer__socials a {
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding: 0.8rem;
-  border-radius: 0.7rem;
+.footer__social {
   display: flex;
-  border: 1px solid transparent;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--chip);
+  border: 1px solid var(--accent2);
+  color: var(--accent2);
+  text-decoration: none;
+  transition: color 0.25s, background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-
-.footer__socials a:hover {
-  background: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+.footer__social:hover {
+  color: #fff;
+  background: var(--accent2);
+  box-shadow: 0 0 18px -4px var(--accent2);
+  transform: translateY(-3px);
 }
-
-.footer__copyright {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  color: var(--color-light);
-}
-
-/* ===== MEDIA QUERIES -> Small Devices ===== */
 @media screen and (max-width: 600px) {
-  .permalinks {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .footer__socials {
-    margin-bottom: 2.6rem;
+  .footer__inner {
+    padding: 28px 20px;
+    justify-content: center;
+    text-align: center;
   }
 }

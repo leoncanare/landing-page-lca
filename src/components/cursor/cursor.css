@@ -1,0 +1,55 @@
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 360px;
+  margin: -180px 0 0 -180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 62%);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  mix-blend-mode: var(--blend);
+  transition: opacity 0.4s ease;
+  will-change: transform;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent2);
+  pointer-events: none;
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.18s ease, height 0.18s ease,
+    margin 0.18s ease, border-color 0.18s ease;
+  will-change: transform;
+}
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow,
+  .cursor-ring,
+  .cursor-dot {
+    display: none;
+  }
+}

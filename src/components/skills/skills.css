@@ -1,0 +1,94 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.skills__card {
+  padding: 30px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.skills__card-title {
+  margin: 0 0 22px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+}
+.skills__chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: var(--chip);
+  border: 1px solid var(--chip-line);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.skill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -18px var(--glow);
+}
+.skill img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.skill__icon--mono {
+  filter: var(--logo-filter);
+}
+.skill__name {
+  font-size: 14px;
+  font-weight: 500;
+}
+.skill__sub {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+}
+.skill__badge {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  flex: none;
+}
+.skill__badge--grad {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+.skill__badge--mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+}
+
+.skill--wide {
+  grid-column: span 2;
+}
+.skills__col-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.skills__col-stack > .skills__card {
+  flex: 1;
+}
+
+@media screen and (max-width: 1040px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+  .skills__col-stack {
+    flex-direction: column;
+  }
+  .skills__col-stack > .skills__card {
+    flex: none;
+  }
+}

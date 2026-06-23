@@ -1,46 +1,106 @@
-nav {
-    background: rgb(0,0,0,0.3);
-    width: max-content;
-    display: block;
-    padding: 0.7rem 1.7rem;
-    z-index: 2;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    bottom: 2rem;
-    gap: 0.8rem;
-    border-radius: 3rem;
-    backdrop-filter: blur(10px);
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease,
+    border-color 0.35s ease;
+}
+.nav--scrolled {
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+.nav__logo {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+}
+.nav__logo .wordmark {
+  font-size: 28px;
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav__links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  transition: color 0.25s, background 0.25s;
+}
+.nav__links a.is-active {
+  color: var(--ink);
+  background: var(--chip);
+}
+.nav__links a:hover {
+  color: var(--ink);
+}
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav__lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 11px;
+}
+.nav__lang button {
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  padding: 5px 9px;
+  border-radius: 8px;
+  transition: all 0.25s;
+}
+.nav__lang button.is-active {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.nav__theme {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 11px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: transform 0.3s ease, background 0.25s;
+}
+.nav__theme:hover {
+  transform: translateY(-2px);
 }
 
-nav a {
-    background: transparent;
-    padding: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    color: var(--color-light);
-    font-size: 1.2rem;
+@media screen and (max-width: 860px) {
+  .nav__links {
+    display: none;
+  }
 }
-
-nav a:hover {
-    background: rgb(0,0,0,0.3);
-}
-nav a.active {
-    background: var(--color-primary);
-    color: var(--color-bg);
-}
-
-/* ===== MEDIA QUERIES -> Small Devices ===== */
 @media screen and (max-width: 600px) {
-  nav {
-    padding: 0.5rem 1.2rem;
-    gap: 0.6rem;
+  .nav__inner {
+    padding: 14px 20px;
   }
-
-  nav a {
-    padding: 0.4rem;
-    font-size: 1.1rem;
+  .nav__logo .wordmark {
+    font-size: 24px;
   }
 }
-
