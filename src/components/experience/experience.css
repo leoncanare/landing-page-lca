@@ -11,18 +11,20 @@
 }
 .tl__line {
   position: absolute;
-  left: 27px;
+  left: 28px;
   top: 8px;
   bottom: 8px;
   width: 2px;
+  transform: translateX(-50%);
   background: var(--line);
 }
 .tl__fill {
   position: absolute;
-  left: 27px;
+  left: 28px;
   top: 8px;
   width: 2px;
   height: 0;
+  transform: translateX(-50%);
   background: linear-gradient(var(--accent), var(--accent2));
   transition: height 0.2s linear;
   box-shadow: 0 0 12px var(--glow);
@@ -38,7 +40,7 @@
 }
 .tl__node {
   position: absolute;
-  left: 18px;
+  left: 28px;
   top: 43px;
   width: 20px;
   height: 20px;
@@ -47,12 +49,13 @@
   border: 4px solid var(--bg);
   box-shadow: 0 0 0 2px var(--line);
   z-index: 2;
+  transform: translateX(-50%);
   transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
 .tl__node.is-active {
   background: var(--accent);
   box-shadow: 0 0 0 3px var(--accent), 0 0 16px var(--glow);
-  transform: scale(1.12);
+  transform: translateX(-50%) scale(1.12);
 }
 
 .tl__card {
@@ -154,10 +157,10 @@
   }
   .tl__line,
   .tl__fill {
-    left: 19px;
+    left: 20px;
   }
   .tl__node {
-    left: 10px;
+    left: 20px;
   }
   .tl__card {
     padding: 20px;
