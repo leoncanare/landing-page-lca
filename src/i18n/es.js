@@ -16,7 +16,7 @@ const es = {
   hero_cta1: "Trabajemos juntos",
   hero_cta2: "Ver mi trayectoria",
   stat_years: "Años de experiencia",
-  stat_proj: "Proyectos empresariales",
+  stat_proj: "Proyectos profesionales",
   stat_tech: "Tecnologías dominadas",
   hero_focus_l: "Ahora enfocado en",
   hero_focus: "integrar IA real en apps y productos inteligentes de impacto",
@@ -42,15 +42,17 @@ const es = {
   about_lead_a: "Desarrollador centrado en ",
   about_lead_b: "productos digitales limpios y de alto rendimiento",
   about_p1:
-    'Hola, me llamo León. Soy un desarrollador apasionado por crear <b>interfaces de usuario eficientes y atractivas</b>, centrado en la <b>optimización del rendimiento</b> y en ofrecer una experiencia de usuario <b>intuitiva, funcional y ágil</b>.',
+    "Hola, me llamo León. Soy un desarrollador apasionado por crear <b>interfaces de usuario eficientes y atractivas</b>, centrado en la <b>optimización del rendimiento</b> y en ofrecer una experiencia de usuario <b>intuitiva, funcional y ágil</b>.",
   about_p2:
-    'Me considero una persona <b>creativa y proactiva</b>, siempre <b>ampliando y actualizando mis habilidades</b> como desarrollador y comprometido con el <b>trabajo bien hecho</b>. Disfruto trabajando en equipo y afrontando <b>nuevos retos</b> que me permitan crecer profesionalmente.',
+    "Me considero una persona <b>creativa y proactiva</b>, siempre <b>ampliando y actualizando mis habilidades</b> como desarrollador y comprometido con el <b>trabajo bien hecho</b>. Disfruto trabajando en equipo y afrontando <b>nuevos retos</b> que me permitan crecer profesionalmente.",
   about_p3:
     "Tengo muchas ganas de aportar mi experiencia, <b>aprender junto a mis compañeros</b> y aplicar mi <b>creatividad</b> a cada proyecto que llegue a mis manos.",
   about_focus:
     "Especializarme en integración de IA para lanzar productos más inteligentes",
+  proj_paco_title: "Extensión VSCode · UNIR",
   proj_paco:
     "Extensión de VSCode para generación de código Angular asistida por IA vía MCP.",
+  proj_laminarra_title: "Lamiñarra",
   proj_laminarra:
     "Plataforma editorial digital para libros — Astro + CMS personalizado con integración de MongoDB y Cloudinary.",
 
@@ -59,47 +61,64 @@ const es = {
   sk_h: "Mis skills",
   sk_front: "Desarrollo frontend",
   sk_tools: "Herramientas e integración",
-  sk_back: "Backend e IA",
+  sk_ia: "IA",
+  sk_back: "Backend",
 
   // Experience timeline
   ex_ey: "Trayectoria profesional",
   ex_h: "Mi recorrido",
   ex_now: "Actual",
   ex1_role: "Frontend Developer · UNIR, Dpto. de Arquitectura",
-  ex1_date: "Actualmente",
+  ex1_date: "Dic. 2025 → Actualidad",
   ex1_desc:
-    "Herramientas con IA para el departamento docente de la universidad. Desarrollo de PACO, una extensión de VSCode para generación de código asistida por IA conectada a la documentación de componentes vía MCP.",
+    "Desarrollo frontend orientado a IA e integraciones y componentización para proyectos internos en UNIR, Dpto. de Arquitectura.",
   ex1_b1:
-    "Herramientas de IA que generan contenido para el departamento docente.",
+    "Desarrollo de extensión de VSCode para generación de código asistida por IA conectada a la documentación de componentes vía MCP.",
   ex1_b2:
-    "PACO: extensión de VSCode. Generador de código con IA integrado con la documentación de componentes vía MCP.",
-  ex1_b3: "Arquitectura monorepo con Nx y Angular 18/20.",
-  ex2_role: "Frontend Developer · MICAELA, Gob. España (SGD)",
-  ex2_date: "Jul. 2022 → Sept. 2024",
+    "Integración del SDK de Claude para flujos asistidos por IA, combinados con generación determinista (plantillas Nx) e integración de terminal (PTY).",
+  ex1_b3:
+    "Construcción de servidores MCP y MCP-stdio para conectar modelos de IA con APIs y sistemas internos de cliente.",
+  ex1_b4:
+    "Integración de API DocuSign para un componente de firma digital personalizado para clientes en UNIR.",
+  ex2_role: "Frontend Developer · Atmira (Consultoría)",
+  ex2_date: "Oct. 2024 → Nov. 2025",
   ex2_desc:
-    "Desarrollo de la web pública del proyecto MICAELA, plataforma científica y energética para el Gobierno de España.",
-  ex2_b1: "Proyecto desarrollado desde cero en Angular v17.",
-  ex2_b2: "Desarrollo y mantenimiento de micro-frontends.",
-  ex2_b3: "Librería de componentes con Storybook.",
-  ex3_role: "Frontend Developer · AEGON, Área Privada (Seguros)",
-  ex3_date: "Nov. 2022 → Ene. 2024",
+    "Toolkit de herramientas alimentadas con IA para el departamento docente de la universidad en UNIR.",
+  ex2_b1:
+    "Desarrollo de plataforma de herramientas con IA que generan contenido para el departamento docente.",
+  ex2_b2: "Arquitectura monorepo con Nx, Angular 18/20 y uso de signals.",
+  ex2_b3:
+    "Componentización en Storybook y creación de componentes reutilizables.",
+  ex3_role: "Frontend Developer · MICAELA, Gob. España (SGD)",
+  ex3_date: "Jul. 2022 → Sept. 2024",
   ex3_desc:
-    "Aplicación web del área de clientes de los seguros Aegon España y gestión de una librería de componentes personalizada.",
-  ex3_b1: "Desarrollo y mantenimiento de la web en Angular v8 y v17.",
+    "Desarrollo de la web pública del proyecto MICAELA, plataforma científica y energética para el Gobierno de España.",
+  ex3_b1: "Proyecto desarrollado desde cero en Angular v17.",
   ex3_b2: "Desarrollo y mantenimiento de micro-frontends.",
   ex3_b3: "Librería de componentes con Storybook.",
-  ex4_role: "Frontend Developer · Staff-IT, Proyecto Interno (ERP)",
-  ex4_date: "Mar. 2022 → Oct. 2022",
+  ex4_role: "Frontend Developer · AEGON, Área Privada (Seguros)",
+  ex4_date: "Nov. 2022 → Ene. 2024",
   ex4_desc:
+    "Aplicación web del área de clientes de los seguros Aegon España y gestión de una librería de componentes personalizada.",
+  ex4_b1: "Desarrollo y mantenimiento de la web en Angular v8 y v17.",
+  ex4_b2: "Desarrollo y mantenimiento de micro-frontends.",
+  ex4_b3: "Librería de componentes con Storybook.",
+  ex5_role: "Frontend Developer · Staff-IT, Proyecto Interno (ERP)",
+  ex5_date: "Mar. 2022 → Oct. 2022",
+  ex5_desc:
     "Staff-IT, producto web interno para la gestión de empleados y clientes de la empresa.",
-  ex4_b1: "Nuevas funcionalidades y mantenimiento en Angular v12.",
-  ex4_b2: "Integración entre módulos de la aplicación web.",
-  ex4_b3: "Mantenimiento centrado en arquitectura hexagonal de Angular.",
+  ex5_b1: "Nuevas funcionalidades y mantenimiento en Angular v12.",
+  ex5_b2: "Integración entre módulos de la aplicación web.",
+  ex5_b3: "Mantenimiento centrado en arquitectura hexagonal de Angular.",
 
   // Portfolio
   pf_ey: "Trabajo reciente",
   pf_h: "Portfolio",
   pf_demo: "Demo ↗",
+  pf_laminarra_desc: "Plataforma editorial full-stack para libros. Frontend con Astro, API con NestJS, MongoDB Atlas, Cloudinary para medios, autenticación con Google OAuth y dashboard admin personalizado para gestionar todo el contenido y la base de datos.",
+  pf_solar_desc: "Web corporativa para una empresa de mantenimiento de instalaciones fotovoltaicas en Navarra. Site estático HTML/CSS/JS bilingüe con Bootstrap y formularios Formspree.",
+  pf_shot_desc: "Herramienta de escritorio en Python para capturar screenshots de páginas completas en formato desktop, tablet y móvil — con marcos de mockup y rastreo automático de URLs.",
+  pf_lib_desc: "Librería de componentes Angular personalizada con documentación en Storybook. Componentes UI reutilizables con theming en Sass y TypeScript estricto.",
 
   // Contact
   ct_ey: "Contacto",

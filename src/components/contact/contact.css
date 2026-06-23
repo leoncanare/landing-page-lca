@@ -105,6 +105,12 @@
 .contact__btn:hover {
   transform: translateY(-2px);
 }
+.contact__btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
 .contact__btn.is-sent {
   background: linear-gradient(135deg, #22c55e, #16a34a);
 }

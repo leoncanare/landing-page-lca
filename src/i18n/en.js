@@ -48,7 +48,9 @@ const en = {
   about_p3:
     "I'm eager to bring my experience, <b>learn alongside my colleagues</b> and apply my <b>creativity</b> to every project that comes my way.",
   about_focus: "Leveling up in AI integration to ship smarter, faster products",
+  proj_paco_title: "VSCode Extension · UNIR",
   proj_paco: "VSCode extension for AI-assisted Angular code generation via MCP.",
+  proj_laminarra_title: "Lamiñarra",
   proj_laminarra:
     "Digital editorial platform for books — Astro + custom CMS with MongoDB and Cloudinary integration.",
 
@@ -57,46 +59,64 @@ const en = {
   sk_h: "My skills",
   sk_front: "Frontend development",
   sk_tools: "Tools & integration",
-  sk_back: "Backend & AI",
+  sk_ia: "AI",
+  sk_back: "Backend",
 
   // Experience timeline
   ex_ey: "Work timeline",
   ex_h: "My journey",
   ex_now: "Now",
   ex1_role: "Frontend Developer · UNIR, Architecture Dept.",
-  ex1_date: "Currently working",
+  ex1_date: "Dec. 2025 → Present",
   ex1_desc:
-    "AI-powered tooling for the university's teaching department. Built PACO, a VSCode extension for AI-assisted code generation wired to our component documentation via MCP.",
-  ex1_b1: "AI tools generating content for the teaching department.",
+    "AI-driven frontend development, integrations and componentization for internal projects at UNIR, Architecture Department.",
+  ex1_b1:
+    "VSCode extension for AI-assisted code generation connected to component documentation via MCP.",
   ex1_b2:
-    "PACO: VSCode extension. AI code generator with component-docs integration via MCP.",
-  ex1_b3: "Monorepo architecture with Nx and Angular 18/20.",
-  ex2_role: "Frontend Developer · MICAELA, Gob. España (SGD)",
-  ex2_date: "Jul. 2022 → Sept. 2024",
+    "Claude SDK integration for AI-driven flows, combined with deterministic generation (Nx templates) and integrated terminal (PTY).",
+  ex1_b3:
+    "Building MCP and MCP-stdio servers to connect AI models with client APIs and internal systems.",
+  ex1_b4:
+    "DocuSign API integration for a custom digital signature component for UNIR clients.",
+  ex2_role: "Frontend Developer · Atmira (Consulting)",
+  ex2_date: "Oct. 2024 → Nov. 2025",
   ex2_desc:
-    "Built the public website of the MICAELA project, a scientific and energy platform for the Spanish Government.",
-  ex2_b1: "Greenfield project built from scratch in Angular v17.",
-  ex2_b2: "Development and maintenance of micro-frontends.",
-  ex2_b3: "Component library built with Storybook.",
-  ex3_role: "Frontend Developer · AEGON, Private Area (Insurance)",
-  ex3_date: "Nov. 2022 → Jan. 2024",
+    "AI-powered toolkit for the university's teaching department at UNIR.",
+  ex2_b1:
+    "AI tooling platform development that generates content for the teaching department.",
+  ex2_b2: "Monorepo architecture with Nx, Angular 18/20 and signals.",
+  ex2_b3:
+    "Componentization in Storybook and creation of reusable components.",
+  ex3_role: "Frontend Developer · MICAELA, Gob. España (SGD)",
+  ex3_date: "Jul. 2022 → Sept. 2024",
   ex3_desc:
-    "Web application for the customer area of Aegon Spain insurance, plus management of a customized component library.",
-  ex3_b1: "Development & maintenance of the web in Angular v8 and v17.",
-  ex3_b2: "Development & maintenance of web micro-frontends.",
+    "Built the public website of the MICAELA project, a scientific and energy platform for the Spanish Government.",
+  ex3_b1: "Greenfield project built from scratch in Angular v17.",
+  ex3_b2: "Development and maintenance of micro-frontends.",
   ex3_b3: "Component library built with Storybook.",
-  ex4_role: "Frontend Developer · Staff-IT, Internal Project (ERP)",
-  ex4_date: "Mar. 2022 → Oct. 2022",
+  ex4_role: "Frontend Developer · AEGON, Private Area (Insurance)",
+  ex4_date: "Nov. 2022 → Jan. 2024",
   ex4_desc:
+    "Web application for the customer area of Aegon Spain insurance, plus management of a customized component library.",
+  ex4_b1: "Development & maintenance of the web in Angular v8 and v17.",
+  ex4_b2: "Development & maintenance of web micro-frontends.",
+  ex4_b3: "Component library built with Storybook.",
+  ex5_role: "Frontend Developer · Staff-IT, Internal Project (ERP)",
+  ex5_date: "Mar. 2022 → Oct. 2022",
+  ex5_desc:
     "Staff-IT, an internal web product for managing the company's own employees and clients.",
-  ex4_b1: "New features and maintenance in Angular v12.",
-  ex4_b2: "Integration between web application modules.",
-  ex4_b3: "Maintenance focused on Angular hexagonal architecture.",
+  ex5_b1: "New features and maintenance in Angular v12.",
+  ex5_b2: "Integration between web application modules.",
+  ex5_b3: "Maintenance focused on Angular hexagonal architecture.",
 
   // Portfolio
   pf_ey: "My recent work",
   pf_h: "Portfolio",
   pf_demo: "Demo ↗",
+  pf_laminarra_desc: "Full-stack editorial platform for books. Astro frontend, NestJS API, MongoDB Atlas, Cloudinary for media, Google OAuth authentication and a custom admin dashboard to manage all content and database.",
+  pf_solar_desc: "Corporate website for a solar panel maintenance company (Navarra). Bilingual HTML/CSS/JS static site with Bootstrap and Formspree contact forms.",
+  pf_shot_desc: "Python desktop tool to capture full-page screenshots in desktop, tablet and mobile formats — with mockup frames and automatic URL crawling.",
+  pf_lib_desc: "Custom Angular component library with Storybook documentation. Reusable UI components with Sass theming and strict TypeScript.",
 
   // Contact
   ct_ey: "Get in touch",

@@ -69,13 +69,26 @@
   font-size: 12px;
 }
 
+.skill--wide {
+  grid-column: span 2;
+}
+.skills__col-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.skills__col-stack > .skills__card {
+  flex: 1;
+}
+
 @media screen and (max-width: 1040px) {
   .skills__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (max-width: 720px) {
-  .skills__grid {
     grid-template-columns: 1fr;
+  }
+  .skills__col-stack {
+    flex-direction: column;
+  }
+  .skills__col-stack > .skills__card {
+    flex: none;
   }
 }

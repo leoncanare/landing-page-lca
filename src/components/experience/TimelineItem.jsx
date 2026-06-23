@@ -8,6 +8,7 @@ const TimelineItem = ({ item, nodeRef, isLast }) => {
 
   return (
     <article
+      id={item.id}
       ref={ref}
       className={`tl__item reveal ${shown ? "is-visible" : ""} ${
         isLast ? "tl__item--last" : ""

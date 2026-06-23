@@ -1,6 +1,7 @@
 // Tech-icon chips for the Skills section.
 // `icon` = simpleicons CDN url; `badge` = text fallback (no brand icon);
 // `mono` = render the CDN icon through --logo-filter (monochrome brand marks).
+// `wide` = chip spans 2 columns in the chips grid.
 const CDN = "https://cdn.simpleicons.org";
 
 export const skillsData = [
@@ -20,7 +21,7 @@ export const skillsData = [
       { icon: `${CDN}/nextdotjs/ffffff`, name: "Next.js", sub: "React SSR", mono: true },
       { icon: `${CDN}/greensock/0ae448`, name: "GSAP", sub: "Animation" },
       { icon: `${CDN}/react/61dafb`, name: "React", sub: "Basic" },
-      { badge: "⧉", badgeGradient: true, name: "Micro-frontends", sub: "Experienced" },
+      { badge: "⧉", badgeGradient: true, name: "Micro-frontends", sub: "Experienced", wide: true },
     ],
   },
   {
@@ -40,11 +41,19 @@ export const skillsData = [
     ],
   },
   {
-    titleKey: "sk_back",
+    titleKey: "sk_ia",
     delay: 200,
     skills: [
-      { icon: `${CDN}/anthropic/D97757`, name: "Claude / Claude Code", sub: "Daily driver" },
+      { icon: `${CDN}/claude/D97757`, name: "Claude Code", sub: "Daily driver" },
       { badge: "M", badgeGradient: true, badgeMono: true, name: "MCP", sub: "Tooling" },
+      { icon: `${CDN}/cursor/000000`, name: "Cursor IDE", sub: "AI editor", mono: true },
+      { icon: `${CDN}/anthropic/D97757`, name: "Anthropic SDK", sub: "API / Agents" },
+    ],
+  },
+  {
+    titleKey: "sk_back",
+    delay: 280,
+    skills: [
       { icon: `${CDN}/nestjs/e0234e`, name: "NestJS", sub: "REST APIs" },
       { icon: `${CDN}/nodedotjs/5fa04e`, name: "Node.js", sub: "Backend" },
       { icon: `${CDN}/mongodb/47a248`, name: "MongoDB", sub: "Mongoose" },

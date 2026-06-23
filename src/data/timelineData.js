@@ -1,4 +1,5 @@
 import UNIR from "../assets/images/logos/unir-logo.png";
+import ATMIRA from "../assets/images/logos/atmira-logo.png";
 import AEGON from "../assets/images/logos/aegon-logo.png";
 import BOSONIT from "../assets/images/logos/bosonit-letters-logo.png";
 
@@ -14,18 +15,36 @@ export const timelineData = [
     dateKey: "ex1_date",
     descKey: "ex1_desc",
     bulletKeys: ["ex1_b1", "ex1_b2", "ex1_b3"],
-    tech: ["Angular 18/20", "Nx", "TypeScript", "Storybook", "Azure · Jira"],
+    tech: [
+      "Angular 20",
+      "Storybook",
+      "TypeScript",
+      "MCP",
+      "DocuSign API",
+      "AI · LLM",
+    ],
     current: true,
+  },
+  {
+    id: "atmira",
+    logo: ATMIRA,
+    logoHeight: 22,
+    logoPad: 16,
+    roleKey: "ex2_role",
+    dateKey: "ex2_date",
+    descKey: "ex2_desc",
+    bulletKeys: ["ex2_b1", "ex2_b2", "ex2_b3"],
+    tech: ["Angular 18/20", "Nx", "TypeScript", "Storybook", "Azure · Jira"],
   },
   {
     id: "micaela",
     logo: BOSONIT,
     logoHeight: 24,
     logoPad: 16,
-    roleKey: "ex2_role",
-    dateKey: "ex2_date",
-    descKey: "ex2_desc",
-    bulletKeys: ["ex2_b1", "ex2_b2", "ex2_b3"],
+    roleKey: "ex3_role",
+    dateKey: "ex3_date",
+    descKey: "ex3_desc",
+    bulletKeys: ["ex3_b1", "ex3_b2", "ex3_b3"],
     tech: ["Angular v17", "TypeScript", "Storybook"],
   },
   {
@@ -33,10 +52,10 @@ export const timelineData = [
     logo: AEGON,
     logoHeight: 27,
     logoPad: 18,
-    roleKey: "ex3_role",
-    dateKey: "ex3_date",
-    descKey: "ex3_desc",
-    bulletKeys: ["ex3_b1", "ex3_b2", "ex3_b3"],
+    roleKey: "ex4_role",
+    dateKey: "ex4_date",
+    descKey: "ex4_desc",
+    bulletKeys: ["ex4_b1", "ex4_b2", "ex4_b3"],
     tech: ["Angular v8 / v17", "TypeScript", "Storybook · Sass"],
   },
   {
@@ -44,10 +63,10 @@ export const timelineData = [
     logo: BOSONIT,
     logoHeight: 24,
     logoPad: 16,
-    roleKey: "ex4_role",
-    dateKey: "ex4_date",
-    descKey: "ex4_desc",
-    bulletKeys: ["ex4_b1", "ex4_b2", "ex4_b3"],
+    roleKey: "ex5_role",
+    dateKey: "ex5_date",
+    descKey: "ex5_desc",
+    bulletKeys: ["ex5_b1", "ex5_b2", "ex5_b3"],
     tech: ["Angular v12", "TypeScript"],
   },
 ];

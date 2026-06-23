@@ -31,6 +31,7 @@
 .tl__item {
   position: relative;
   padding: 0 0 44px 70px;
+  scroll-margin-top: 96px;
 }
 .tl__item--last {
   padding-bottom: 0;

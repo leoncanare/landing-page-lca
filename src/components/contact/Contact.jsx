@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 import useReveal from "../../hooks/useReveal";
 import "./contact.css";
@@ -15,6 +14,17 @@ const PhoneIcon = () => (
     <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
   </svg>
 );
+const SendIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="22" y1="2" x2="11" y2="13" />
+    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+  </svg>
+);
+const CheckIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -24,16 +34,22 @@ const Contact = () => {
   const [leftRef, leftShown] = useReveal();
   const [formRef, formShown] = useReveal();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm("service_d4i4jvy", "template_hrqhx1s", form.current, {
-        publicKey: "bf6j6vcYuwJArDyzz",
-      })
-      .then(
-        () => {},
-        (error) => console.log(error?.text)
-      );
+    const name = form.current.name.value;
+    const email = form.current.email.value;
+    const message = form.current.message.value;
+
+    try {
+      await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+    } catch (err) {
+      console.error("Send error:", err);
+    }
+
     setSent(true);
     form.current.reset();
     setTimeout(() => setSent(false), 2200);
@@ -107,7 +123,9 @@ const Contact = () => {
               className={`contact__btn ${sent ? "is-sent" : ""}`}
             >
               <span>{sent ? t("ct_sent") : t("ct_send")}</span>
-              <span>{sent ? "✓" : "→"}</span>
+              <span className="contact__btn-icon">
+                {sent ? <CheckIcon /> : <SendIcon />}
+              </span>
             </button>
           </form>
         </div>

@@ -41,7 +41,7 @@ const SkillCard = ({ group }) => {
       <h3 className="skills__card-title">{t(group.titleKey)}</h3>
       <div className="skills__chips">
         {group.skills.map((skill) => (
-          <div className="skill" key={skill.name}>
+          <div className={`skill${skill.wide ? " skill--wide" : ""}`} key={skill.name}>
             <SkillBadge skill={skill} />
             <div>
               <div className="skill__name">{skill.name}</div>
@@ -69,9 +69,12 @@ const Skills = () => {
           <h2 className="section-h2">{t("sk_h")}</h2>
         </div>
         <div className="skills__grid">
-          {skillsData.map((group) => (
-            <SkillCard group={group} key={group.titleKey} />
-          ))}
+          <SkillCard group={skillsData[0]} />
+          <div className="skills__col-stack">
+            <SkillCard group={skillsData[2]} />
+            <SkillCard group={skillsData[3]} />
+          </div>
+          <SkillCard group={skillsData[1]} />
         </div>
       </div>
     </section>
