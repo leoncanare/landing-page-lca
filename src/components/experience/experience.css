@@ -184,4 +184,22 @@
   .tl__card {
     padding: 20px;
   }
+  /* Stack the card header: logo on top (full width), then title, then the
+     rest — instead of logo and title side by side on a narrow card. */
+  .tl__head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .tl__head-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .tl__logo {
+    width: 100%;
+  }
+  .tl__now {
+    align-self: flex-start;
+  }
 }
