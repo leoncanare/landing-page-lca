@@ -126,12 +126,7 @@ const Contact = () => {
               rows="6"
               placeholder={t("ph_msg")}
             ></textarea>
-            {token ? (
-              <div className="contact__verified">
-                <CheckIcon />
-                <span>Verificado</span>
-              </div>
-            ) : (
+            {!token && (
               <Turnstile
                 siteKey={TURNSTILE_SITE_KEY}
                 onSuccess={setToken}

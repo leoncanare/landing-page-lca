@@ -102,8 +102,13 @@
   box-shadow: 0 14px 34px -14px var(--glow);
   transition: transform 0.2s, background 0.3s;
 }
-.contact__btn:hover {
+.contact__btn:hover:not(:disabled) {
   transform: translateY(-2px);
+}
+.contact__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 .contact__btn-icon {
   display: flex;
@@ -115,18 +120,6 @@
   background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
-.contact__verified {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  background: color-mix(in srgb, #22e07f 10%, transparent);
-  border: 1px solid color-mix(in srgb, #22e07f 30%, transparent);
-  color: #22e07f;
-  font-size: 14px;
-  font-weight: 500;
-}
 
 @media screen and (max-width: 720px) {
   .contact__grid {
