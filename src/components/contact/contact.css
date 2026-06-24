@@ -115,6 +115,19 @@
   background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
+.contact__verified {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, #22e07f 10%, transparent);
+  border: 1px solid color-mix(in srgb, #22e07f 30%, transparent);
+  color: #22e07f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 720px) {
   .contact__grid {
     grid-template-columns: 1fr;

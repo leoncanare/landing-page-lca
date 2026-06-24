@@ -126,7 +126,12 @@ const Contact = () => {
               rows="6"
               placeholder={t("ph_msg")}
             ></textarea>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            {token ? (
+              <div className="contact__verified">
+                <CheckIcon />
+                <span>Verificado</span>
+              </div>
+            ) : (
               <Turnstile
                 siteKey={TURNSTILE_SITE_KEY}
                 onSuccess={setToken}
@@ -134,7 +139,7 @@ const Contact = () => {
                 options={{ size: "flexible" }}
                 style={{ width: "100%" }}
               />
-            </div>
+            )}
             <button
               type="submit"
               className={`contact__btn ${sent ? "is-sent" : ""}`}
