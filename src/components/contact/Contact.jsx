@@ -1,7 +1,11 @@
 import React, { useRef, useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useTranslation } from "react-i18next";
 import useReveal from "../../hooks/useReveal";
 import "./contact.css";
+
+// Replace with your Cloudflare Turnstile site key
+const TURNSTILE_SITE_KEY = "0x4AAAAAADp6nODhASsViTXm";
 
 const MailIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -30,12 +34,15 @@ const Contact = () => {
   const { t } = useTranslation();
   const form = useRef();
   const [sent, setSent] = useState(false);
+  const [token, setToken] = useState(null);
   const [headRef, headShown] = useReveal();
   const [leftRef, leftShown] = useReveal();
   const [formRef, formShown] = useReveal();
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (!token) return;
+
     const name = form.current.name.value;
     const email = form.current.email.value;
     const message = form.current.message.value;
@@ -44,13 +51,14 @@ const Contact = () => {
       await fetch("/.netlify/functions/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, token }),
       });
     } catch (err) {
       console.error("Send error:", err);
     }
 
     setSent(true);
+    setToken(null);
     form.current.reset();
     setTimeout(() => setSent(false), 2200);
   };
@@ -118,9 +126,15 @@ const Contact = () => {
               rows="6"
               placeholder={t("ph_msg")}
             ></textarea>
+            <Turnstile
+              siteKey={TURNSTILE_SITE_KEY}
+              onSuccess={setToken}
+              onExpire={() => setToken(null)}
+            />
             <button
               type="submit"
               className={`contact__btn ${sent ? "is-sent" : ""}`}
+              disabled={!token}
             >
               <span>{sent ? t("ct_sent") : t("ct_send")}</span>
               <span className="contact__btn-icon">

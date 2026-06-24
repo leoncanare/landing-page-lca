@@ -351,6 +351,22 @@
   .hero__container {
     padding: 0 20px;
   }
+  .hero__ctas {
+    flex-direction: column;
+  }
+  .hero__ctas .btn-grad,
+  .hero__ctas .btn-chip {
+    width: 100%;
+    text-align: center;
+  }
+  .hero__socials {
+    align-self: center;
+  }
+  .hero__social {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
   .hero__stats {
     gap: 20px;
   }

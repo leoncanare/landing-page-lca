@@ -5,10 +5,24 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const { name, email, message } = JSON.parse(event.body || "{}");
+  const { name, email, message, token } = JSON.parse(event.body || "{}");
 
   if (!name || !email || !message) {
     return { statusCode: 400, body: JSON.stringify({ error: "Missing fields" }) };
+  }
+
+  // Verify Turnstile token
+  const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      secret: process.env.TURNSTILE_SECRET_KEY,
+      response: token,
+    }),
+  });
+  const { success } = await verify.json();
+  if (!success) {
+    return { statusCode: 400, body: JSON.stringify({ error: "CAPTCHA failed" }) };
   }
 
   const transporter = nodemailer.createTransport({

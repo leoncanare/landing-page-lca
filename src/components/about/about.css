@@ -202,7 +202,7 @@
   .focus__head {
     padding: 16px 18px;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
   }
   .focus__head-text {
     min-width: 0;

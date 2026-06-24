@@ -9,25 +9,43 @@
 .tl__track {
   position: relative;
 }
-.tl__line {
-  position: absolute;
-  left: 28px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  transform: translateX(-50%);
-  background: var(--line);
-}
 .tl__fill {
   position: absolute;
   left: 28px;
-  top: 8px;
+  top: 0;
   width: 2px;
   height: 0;
   transform: translateX(-50%);
   background: linear-gradient(var(--accent), var(--accent2));
   transition: height 0.2s linear;
   box-shadow: 0 0 12px var(--glow);
+  z-index: 1;
+}
+
+/* Static line: each item draws its own segment via pseudo-elements */
+/* Segment from node center → bottom of item (connects to next item) */
+.tl__item:not(.tl__item--last)::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  transform: translateX(-50%);
+  width: 2px;
+  top: 53px;
+  bottom: 0;
+  background: var(--line);
+  z-index: 1;
+}
+/* Segment from top of item → node center (connects from previous item) */
+.tl__item + .tl__item::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  transform: translateX(-50%);
+  width: 2px;
+  top: 0;
+  height: 53px;
+  background: var(--line);
+  z-index: 1;
 }
 
 .tl__item {

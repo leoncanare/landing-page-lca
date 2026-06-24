@@ -10,27 +10,21 @@ const ExperienceTimeline = () => {
   const [headRef, headShown] = useReveal();
 
   const trackRef = useRef(null);
-  const lineRef = useRef(null);
   const fillRef = useRef(null);
   const nodeRefs = useRef([]);
   const geom = useRef({ top: 0 });
 
   const layout = useCallback(() => {
-    const track = trackRef.current;
-    const line = lineRef.current;
     const fill = fillRef.current;
     const nodes = nodeRefs.current.filter(Boolean);
-    if (!track || !line || !nodes.length) return;
+    if (!nodes.length) return;
 
-    const tr = track.getBoundingClientRect();
     const first = nodes[0].getBoundingClientRect();
-    const last = nodes[nodes.length - 1].getBoundingClientRect();
+    const track = trackRef.current;
+    if (!track) return;
+    const tr = track.getBoundingClientRect();
     const top = first.top - tr.top + first.height / 2;
-    const bottom = last.top - tr.top + last.height / 2;
     geom.current.top = top;
-    line.style.top = `${top}px`;
-    line.style.bottom = "auto";
-    line.style.height = `${bottom - top}px`;
     if (fill) fill.style.top = `${top}px`;
   }, []);
 
@@ -94,7 +88,6 @@ const ExperienceTimeline = () => {
     };
   }, [layout, onScroll]);
 
-  // Re-measure when translated text changes height (language switch)
   useEffect(() => {
     const id = setTimeout(() => {
       layout();
@@ -115,7 +108,6 @@ const ExperienceTimeline = () => {
         </div>
 
         <div className="tl__track" ref={trackRef}>
-          <div className="tl__line" ref={lineRef} />
           <div className="tl__fill" ref={fillRef} />
           {timelineData.map((item, i) => (
             <TimelineItem
