@@ -171,16 +171,35 @@
     padding: 0 20px;
   }
   .tl__item {
-    padding-left: 56px;
+    padding-left: 52px;
   }
-  .tl__line,
-  .tl__fill {
-    left: 20px;
-  }
-  .tl__node {
+  /* Keep every rail element on the same axis: animated fill, nodes and the
+     static line segments (pseudo-elements) must share the same left offset. */
+  .tl__fill,
+  .tl__node,
+  .tl__item:not(.tl__item--last)::after,
+  .tl__item + .tl__item::before {
     left: 20px;
   }
   .tl__card {
     padding: 20px;
+  }
+  /* Stack the card header: logo on top (full width), then title, then the
+     rest — instead of logo and title side by side on a narrow card. */
+  .tl__head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .tl__head-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .tl__logo {
+    width: 100%;
+  }
+  .tl__now {
+    align-self: flex-start;
   }
 }
