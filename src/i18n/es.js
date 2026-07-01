@@ -90,14 +90,14 @@ const es = {
   ex2_b3:
     "Componentización en Storybook y creación de componentes reutilizables.",
   ex3_role: "Frontend Developer · MICAELA, Gob. España (SGD)",
-  ex3_date: "Jul. 2022 → Sept. 2024",
+  ex3_date: "Jul. 2024 → Sept. 2024",
   ex3_desc:
     "Desarrollo de la web pública del proyecto MICAELA, plataforma científica y energética para el Gobierno de España.",
   ex3_b1: "Proyecto desarrollado desde cero en Angular v17.",
   ex3_b2: "Desarrollo y mantenimiento de micro-frontends.",
   ex3_b3: "Librería de componentes con Storybook.",
   ex4_role: "Frontend Developer · AEGON, Área Privada (Seguros)",
-  ex4_date: "Nov. 2022 → Ene. 2024",
+  ex4_date: "Nov. 2022 → Jun. 2024",
   ex4_desc:
     "Aplicación web del área de clientes de los seguros Aegon España y gestión de una librería de componentes personalizada.",
   ex4_b1: "Desarrollo y mantenimiento de la web en Angular v8 y v17.",
@@ -115,10 +115,14 @@ const es = {
   pf_ey: "Trabajo reciente",
   pf_h: "Portfolio",
   pf_demo: "Demo ↗",
-  pf_laminarra_desc: "Plataforma editorial full-stack para libros. Frontend con Astro, API con NestJS, MongoDB Atlas, Cloudinary para medios, autenticación con Google OAuth y dashboard admin personalizado para gestionar todo el contenido y la base de datos.",
-  pf_solar_desc: "Web corporativa para una empresa de mantenimiento de instalaciones fotovoltaicas en Navarra. Site estático HTML/CSS/JS bilingüe con Bootstrap y formularios Formspree.",
-  pf_shot_desc: "Herramienta de escritorio en Python para capturar screenshots de páginas completas en formato desktop, tablet y móvil — con marcos de mockup y rastreo automático de URLs.",
-  pf_lib_desc: "Librería de componentes Angular personalizada con documentación en Storybook. Componentes UI reutilizables con theming en Sass y TypeScript estricto.",
+  pf_laminarra_desc:
+    "Plataforma editorial full-stack para libros. Frontend con Astro, API con NestJS, MongoDB Atlas, Cloudinary para medios, autenticación con Google OAuth y dashboard admin personalizado para gestionar todo el contenido y la base de datos.",
+  pf_solar_desc:
+    "Web corporativa para una empresa de mantenimiento de instalaciones fotovoltaicas en Navarra. Site estático HTML/CSS/JS bilingüe con Bootstrap y formularios Formspree.",
+  pf_shot_desc:
+    "Herramienta de escritorio en Python para capturar screenshots de páginas completas en formato desktop, tablet y móvil — con marcos de mockup y rastreo automático de URLs.",
+  pf_lib_desc:
+    "Librería de componentes Angular personalizada con documentación en Storybook. Componentes UI reutilizables con theming en Sass y TypeScript estricto.",
 
   // Contact
   ct_ey: "Contacto",
